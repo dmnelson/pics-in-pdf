@@ -11,7 +11,7 @@ Prawn::Document.generate(pdf, :page_size => [820, 620], :margin => 10, :layout =
   images = Dir.glob("#{folder}/*.{png,jpg,jpeg}", File::FNM_CASEFOLD).sort
   images.each do |image_file|
     start_new_page if image_file != images.first 
-    text image_file.scan(/\d{4}_\d{2}_\d{2}/).first
+    text image_file
     image image_file, :fit => [800, 570] 
   end
 end
